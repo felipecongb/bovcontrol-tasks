@@ -62,25 +62,32 @@ const FormField = () => {
                 onChangeText={(value) => handleChange('milkProduction', parseInt(value))}
                 keyboardType="numeric"
             />
-            <Text>cattleCount:</Text>
+            <Text>Numero de Animais:</Text>
             <TextInput
                 value={formData.cattleCount.toString()}
                 onChangeText={(value) => handleChange('cattleCount', parseInt(value))}
                 keyboardType="numeric"
             />
+
+            {/*
+            //Aqui Sera Adicionado um componete de feature toogle mostrando para que se possa alterar 
             <Text>hadSupervision:</Text>
-            {/* <CheckBox
+             <CheckBox
                 value={formData.hadSupervision}
                 onValueChange={(value) => handleChange('hadSupervision', value)}
-            /> */}
-            <Text>updatedAt:</Text>
+            /> 
+
+            //Aqui Sera Adicionado um componete para mostrar que o item foi criado com Regex para data
+             <Text>updatedAt:</Text>
             <TextInput
                 value={formData.updatedAt ? formData.updatedAt.toISOString().split('T')[0] : ''}
                 onChangeText={(value) => handleChange('updatedAt', value ? new Date(value) : null)}
                 keyboardType="numeric"
-            />
+            /> 
+
+            //Aqui Sera Adicionado um componete para mostrar que o item foi sincronizado
             <Text>synced:</Text>
-            {/* <CheckBox
+            <CheckBox
                 value={formData.synced}
                 onValueChange={(value) => handleChange('synced', value)}
             /> */}

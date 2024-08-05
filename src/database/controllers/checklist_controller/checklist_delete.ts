@@ -1,4 +1,4 @@
-import realm from "../../realm_config";
+import realm from "../../schema/checklist_schema";
 
  function deleteChecklist(id) {
     const checklist = realm.objects("Checklist").filtered(`id = ${id}`);

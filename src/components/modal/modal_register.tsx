@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Modal, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, Modal, TouchableOpacity, StyleSheet, SafeAreaView } from 'react-native';
+import { FormField } from '../form';
 
 interface ModalRegisterProps {
     modalVisible: boolean;
@@ -20,13 +21,14 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ modalVisible, closeModal 
                 onRequestClose={() => closeModal()}
             >
                 <View style={styles.modalContainer}>
+                <SafeAreaView >
                     <View style={styles.modalContent}>
-                        <Text style={styles.modalText}>This is a modal</Text>
-
                         <TouchableOpacity onPress={() => closeModal()}>
                             <Text style={styles.closeButton}>Close</Text>
                         </TouchableOpacity>
+                        <FormField/>
                     </View>
+                </SafeAreaView>
                 </View>
             </Modal>
         </View>
@@ -36,8 +38,6 @@ const ModalRegister: React.FC<ModalRegisterProps> = ({ modalVisible, closeModal 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
     },
     openButton: {
         fontSize: 16,
@@ -46,15 +46,13 @@ const styles = StyleSheet.create({
     },
     modalContainer: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        paddingHorizontal: 20,
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
     },
     modalContent: {
         backgroundColor: 'white',
         padding: 20,
         borderRadius: 10,
-        alignItems: 'center',
     },
     modalText: {
         fontSize: 18,

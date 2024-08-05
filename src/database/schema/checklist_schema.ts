@@ -1,5 +1,5 @@
 // src/realm/realmConfig.js
-import Realm from 'realm';
+import {Realm} from 'realm';
 
 export const ChecklistSchema = {
   name: 'Checklist',
@@ -20,4 +20,5 @@ export const ChecklistSchema = {
   primaryKey: '_id',
 };
 
-export default new Realm({schema: [ChecklistSchema]});
+const realm = new Realm({schema: [ChecklistSchema]});
+export default realm;

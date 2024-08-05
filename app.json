@@ -12,16 +12,18 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true, 
+      "supportsTablet": true,
       "entitlements": {
         "com.apple.developer.networking.wifi-info": true
-      }
-    }, 
+      },
+      "bundleIdentifier": "com.felipecongb.bovcontrol"
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.felipecongb.bovcontrol"
     },
     "web": {
       "favicon": "./assets/favicon.png"

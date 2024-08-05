@@ -1,5 +1,5 @@
-import NetInfo from '@react-native-community/netinfo';
-import realm from '../database/realm_config';
+import NetInfo from "@react-native-community/netinfo";
+import realm from '../database/schema/checklist_schema';
 import api from './api';
 
 let syncInterval: NodeJS.Timeout | null = null;

@@ -1,4 +1,4 @@
-import realm from '../../realm_config';
+import realm from '../../schema/checklist_schema';
 
 const createChecklist = (
   id: string,
