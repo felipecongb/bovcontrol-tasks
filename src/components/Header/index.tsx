@@ -10,7 +10,7 @@ export function Header() {
     <Container>
       <Greeting>
         <Title>Bov Task</Title>
-        <SubTitle>Liste Uas Terefas aqui.</SubTitle>
+        <SubTitle>Liste das Terefas aqui.</SubTitle>
       </Greeting>
 
       <IconButton icon="logout" />

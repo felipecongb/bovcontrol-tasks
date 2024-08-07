@@ -13,6 +13,10 @@ export const ChecklistSchema = {
     hadSupervision: 'bool',
     createdAt: 'date',
     updatedAt: 'date?',
+    // location: {
+    //   latitude: 'float',
+    //   longitude: 'float',
+    // },
     synced: 'bool',
   },
   primaryKey: "_id",

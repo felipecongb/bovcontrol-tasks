@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import uuid from 'react-native-uuid';
-import { View, Text, Switch, Alert } from 'react-native';
+import { View, Text, Switch, Alert, TouchableOpacity } from 'react-native';
 import { Container, Header, Title, Form } from './styles';
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
@@ -113,7 +113,6 @@ export function NewCheckList() {
         realm.write(() => {
           const checklistId = checklist?._id;
           if (checklistId) {
-            // Atualizar checklist existente
             const existingChecklist = realm.objectForPrimaryKey('ChecklistOne', checklistId);
             if (existingChecklist) {
               existingChecklist.farmerName = farmerName;
@@ -167,6 +166,8 @@ export function NewCheckList() {
     }
   }
   
+  const checklistOptions = ["BPA", "Antibiótico", "BPF"];
+
   return (
     <Container>
       <Header>
@@ -218,11 +219,21 @@ export function NewCheckList() {
               onChangeText={setSupervisorName}
             />
 
-            <Input
-              placeholder="Tipo de Checklist"
-              value={checklistType}
-              onChangeText={setChecklistType}
-            />
+            <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginBottom: 20 }}>
+              {checklistOptions.map(option => (
+                <TouchableOpacity
+                  key={option}
+                  style={{
+                    padding: 10,
+                    backgroundColor: checklistType === option ? 'blue' : 'grey',
+                    borderRadius: 5,
+                  }}
+                  onPress={() => setChecklistType(option)}
+                >
+                  <Text style={{ color: 'white' }}>{option}</Text>
+                </TouchableOpacity>
+              ))}
+            </View>
 
             <Input
               placeholder="Produção de Leite"
