@@ -1,13 +1,11 @@
-// src/realm/realmConfig.js
-import {Realm} from 'realm';
-
 export const ChecklistSchema = {
-  name: 'Checklist',
+  name: 'ChecklistOne',
   properties: {
-    _id: 'objectId',
+    _id: "string",
     farmerName: 'string',
     farmName: 'string',
     city: 'string',
+    cep: 'string?',
     supervisorName: 'string?',
     checklistType: 'string',
     milkProduction: 'int',
@@ -17,8 +15,6 @@ export const ChecklistSchema = {
     updatedAt: 'date?',
     synced: 'bool',
   },
-  primaryKey: '_id',
+  primaryKey: "_id",
 };
 
-const realm = new Realm({schema: [ChecklistSchema]});
-export default realm;
